@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>הזמנה | Sweet Bite</title>
+<link rel="icon" href="../favicon.ico">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/order.css">
+</head>
+<body>
+<header>
+<a class="logo" href="../index.html">
+    <img src="../assets/images/logo.jpg" alt="Sweet Bite - לדף הבית"></a>
+</header>
+<div class="layout">
+<aside>
+    <nav aria-label="תפריט ראשי">
+        <ul>
+            <li><a href="../index.html">בית</a></li>
+            <li><a href="cakes.html">עוגות</a></li>
+            <li><a href="sweets.html">מתוקים קטנים</a></li>
+            <li><a href="about.html">אודות</a></li>
+            <li><a href="order.html" aria-current="page">הזמנה</a></li>
+        </ul>
+    </nav>
+</aside>
+<main>
+<h1>הזמנת עוגה</h1>
+<form action="thanks.html" method="get">
+<fieldset>
+    <legend>פרטים אישיים</legend>
+<label class="req" for="name">שם מלא</label>
+<input type="text" id="name" name="name" required minlength="2" placeholder="לדוגמה: מיכל כהן">
+<label class="req" for="phone">טלפון</label>
+<input type="tel" id="phone" name="phone" required pattern="0[0-9]{1,2}-?[0-9]{7}" placeholder="050-1234567" title="מספר טלפון ישראלי תקין">
+<label class="req" for="mail">אימייל</label>
+<input type="email" id="mail" name="mail" required placeholder="name@example.com">
+<label for="city">עיר</label>
+<input type="text" id="city" name="city" list="cities">
+<datalist id="cities">
+    <option value="חולון">
+        <option value="תל אביב">
+            <option value="בת ים">
+                <option value="רמת גן">
+</datalist>
+</fieldset>
+<fieldset>
+    <legend>פרטי ההזמנה</legend>
+<label for="kind">סוג העוגה</label>
+<select id="kind" name="kind">
+    <option>עוגת שוקולד בלגי</option>
+    <option>עוגת גבינה אפויה</option>
+    <option>עוגת וניל ופטל</option>
+    <option>מקרונים</option>
+</select>
+<label class="req" for="date">תאריך אספקה</label>
+<input type="date" id="date" name="date" required min="2026-11-06">
+<label for="time">שעה</label>
+<input type="time" id="time" name="time" min="08:00" max="19:00">
+<label for="guests">מספר מנות</label>
+<input type="number" id="guests" name="guests" min="6" max="60" value="12">
+<label for="color">צבע קרם</label>
+<input type="color" id="color" name="color" value="#d4506f">
+<label for="sweet">רמת מתיקות</label>
+<input type="range" id="sweet" name="sweet" min="1" max="5" value="3">
+</fieldset>
+<fieldset>
+    <legend>אספקה ותוספות</legend>
+<label><input type="radio" name="way" value="pickup" checked> איסוף עצמי</label>
+<label><input type="radio" name="way" value="delivery"> משלוח</label>
+<label><input type="checkbox" name="extra" value="candle"> נרות</label>
+<label><input type="checkbox" name="extra" value="card"> כרטיס ברכה</label>
+<label for="note">הערות ובקשות מיוחדות</label>
+<textarea id="note" name="note" rows="4" maxlength="300"></textarea>
+</fieldset>
+<div class="actions"><button class="btn" type="submit">שליחת הזמנה</button>
+    <button class="btn" type="reset">איפוס</button>
+</div>
+</form>
+</main>
+</div>
+<footer>
+<p>© כל הזכויות שמורות ל-Sweet Bite 2026</p>
+<ul>
+<li><a href="about.html">אודות</a></li>
+<li><a href="tel:0501234567">050-123-4567</a></li>
+<li><a href="mailto:info@sweetbite.co.il">info@sweetbite.co.il</a></li>
+</ul>
+</footer>
+</body>
+</html>

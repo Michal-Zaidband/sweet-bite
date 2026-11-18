@@ -1,0 +1,33 @@
+.card{
+    border-radius:3rem 1rem 3rem 1rem;
+    background:linear-gradient(160deg,#fff,var(--soft));
+    border:2px dashed var(--pink)
+}
+.card p{
+    padding:.3rem 1rem
+}
+.card ul{
+    list-style-position:inside
+}
+.price{
+    font-weight:700;
+    color:var(--dark);
+    font-size:1.2rem
+}
+.card:nth-child(odd):hover{
+    /* מסובב את האלמנט */
+    transform:rotate(2deg)
+}
+.card:nth-child(even):hover{
+    transform:rotate(-2deg)
+}
+@media(max-width:768px){
+    .grid{
+        grid-template-columns:1fr 1fr
+    }
+}
+@media(max-width:480px){
+    .grid{
+        grid-template-columns:1fr
+    }
+}

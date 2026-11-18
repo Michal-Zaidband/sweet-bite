@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=Suez+One&display=swap');
+:root{
+    --pink:#d4506f;
+    --dark:#3a3b3e;
+    --soft:#fdecef;
+    --radius:1.2rem;
+    --shadow:0 .5rem 1.5rem rgba(0,0,0,.08)
+}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    font-family:'Assistant',Arial,sans-serif;
+    color:var(--dark);
+    background:var(--soft);
+    line-height:1.7;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column
+}
+img{
+    max-width:100%;
+    display:block
+}
+header{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:#fff;
+    border-bottom:4px solid var(--pink);
+    text-align:center;
+    padding:1% 0
+}
+.logo img{
+    width:30%;
+    max-width:280px;
+    margin:0 auto;
+    transition:transform .4s
+}
+.logo:hover img{
+    transform:scale(1.06) rotate(-2deg)
+}
+.layout{
+    display:flex;
+    /* מסדרת את הילדים בעמודה */
+    flex-direction:column;
+    gap:2%;
+    width:96%;
+    max-width:1200px;
+    margin:2% auto;
+    flex:1
+}
+aside{
+    width:100%;
+    background:var(--dark);
+    border-radius:var(--radius);
+    padding:1.5%
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    flex-direction:row;
+    /* מאפשר לרדת גם כשאין מקום */
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:.6rem
+}
+nav a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:.6rem 1rem;
+    border-radius:999px;
+    transition:background .3s,transform .3s
+}
+nav a:hover,
+nav a[aria-current="page"]{
+    background:var(--pink)
+}
+nav a:hover{
+    /* מוזיז את הקישורים שלוש פיקסלים למעלה */
+    transform:translateY(-3px)
+}
+main{
+    width:100%;
+    background:#fff;
+    border-radius:var(--radius);
+    padding:3%;
+    box-shadow:var(--shadow)
+}
+main h1{
+    font-family:'Suez One',serif;
+    color:var(--pink);
+    margin-bottom:1rem
+}
+/* מאפשר להוסיף אלמנט מתחת בלי לכתוב תגית בHTML */
+main h2::after{
+    content:"";
+    display:block;
+    width:3rem;
+    height:.25rem;
+    margin-top:.2rem;
+    background:var(--pink);
+    border-radius:1rem
+}
+main section+section{
+    margin-top:2rem
+}
+main ul li::marker{
+    color:var(--pink)
+}
+a{
+    color:var(--pink)
+}
+a[href^="tel"]::before{
+    content:"📞 "
+}
+a[href^="mailto"]::before{
+    content:"✉️ "
+}
+a[download]::before{
+    content:"⬇️ "
+}
+/* עיצוב הכפתורים */
+.btn{
+    display:inline-block;
+    background:linear-gradient(135deg,var(--pink),#e98aa0);
+    color:#fff;
+    padding:.7rem 1.6rem;
+    border:0;
+    border-radius:999px;
+    text-decoration:none;
+    font:inherit;
+    cursor:pointer;
+    transition:transform .3s
+}
+.btn:hover{
+    transform:translateY(-3px) scale(1.05)
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1.5rem
+}
+.card{
+    background:var(--soft);
+    border-radius:var(--radius);
+    /* מסתיר תוכן שיוצא מחוץ לגבולות */
+    overflow:hidden;
+    /* ממרכז את הטקסט */
+    text-align:center;
+    padding-bottom:1rem;
+    /* backwards: ההנפשה משפיעה רק עד שהיא מסתיימת, ואז ה-hover יכול להטות את הכרטיס */
+    animation:rise .8s ease backwards
+}
+.card:nth-child(2){
+    animation-delay:.2s
+}
+.card:nth-child(3){
+    animation-delay:.4s
+}
+.card:nth-child(4){
+    animation-delay:.6s
+}
+.card:nth-child(5){
+    animation-delay:.8s
+}
+.card:nth-child(6){
+    animation-delay:1s
+}
+.card figure{
+    overflow:hidden
+}
+.card img{
+    width:100%;
+    /* כל התמונות בכרטיסים יהיו ריבועיות ובאותו גובה */
+    aspect-ratio:1;
+    /* התמונה ממלאת את הריבוע בלי להימתח, והעודף נחתך */
+    object-fit:cover;
+    transition:transform .5s
+}
+.card:hover img{
+    transform:scale(1.1)
+}
+.card figcaption{
+    font-weight:700;
+    padding:.6rem
+}
+@keyframes rise{
+    from{
+        opacity:0;
+        transform:translateY(30px)
+    }
+        to{ 
+            opacity:1;
+            transform:none
+        }
+        }
+footer{
+    background:var(--dark);
+    color:#fff;
+    text-align:center;
+    padding:1.5% 2%
+}
+footer ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:2rem
+}
+footer a{
+    color:#fff
+}
+/* משנה עיצוב בהתאם לגודל של המסך */
+@media(max-width:768px){
+    .logo img{
+        width:65%
+    }
+    /* משנה את הגודל של הדפדפן */
+    .grid{
+        grid-template-columns:1fr
+    }
+}

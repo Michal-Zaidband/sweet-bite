@@ -1,0 +1,40 @@
+.hero{
+    display:flex;
+    align-items:center;
+    gap:4%;
+    padding:4%;
+    border-radius:var(--radius);
+    background:linear-gradient(135deg,var(--soft),#fff)
+}
+.hero div{
+    width:55%
+}
+.hero img{
+    width:40%;
+    animation:float 3s ease-in-out infinite
+}
+@keyframes float{
+    50%{
+        transform:translateY(-14px)
+    }
+}
+.media video{
+    width:100%;
+    border-radius:var(--radius);
+    margin:1rem 0
+}
+/* שורה ורוד שורה שחור */
+.reasons li:nth-child(odd){
+    color:var(--pink);
+    font-weight:700
+}
+/* @media משנה עיצוב בהתאם לגודל של המסך */
+@media(max-width:768px){
+    .hero{
+        flex-direction:column;
+        text-align:center
+    }
+        .hero div,.hero img{
+            width:100%
+        }
+    }

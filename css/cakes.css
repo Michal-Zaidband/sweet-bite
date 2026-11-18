@@ -1,0 +1,25 @@
+.card{
+    border-top:.5rem solid var(--pink)
+}
+.card p{
+    padding:.3rem 1rem
+}
+.card ul{
+    list-style:none
+}
+.card ul li::before{
+    content:"🍰 "
+}
+.price{
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--pink)
+}
+.card:hover{
+    box-shadow:0 1rem 2rem rgba(212,80,111,.3)
+}
+@media(max-width:768px){
+    .grid{
+        grid-template-columns:1fr
+    }
+}

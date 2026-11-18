@@ -1,0 +1,81 @@
+.story{
+    display:flex;
+    /* ממרכז לאורך הציר המשני*/
+    align-items:center;
+    gap:4%
+}
+.story figure{
+    width:35%;
+    border-radius:50%;
+    /* מסתיר חלקים שיוצאים מהאלמנט */
+    overflow:hidden
+}
+/* התמונה ריבועית בדיוק, ולכן העיגול מושלם ולא סגלגל */
+.story img{
+    aspect-ratio:1;
+    object-fit:cover
+}
+.values{
+    display:flex;
+    /* יורד לשורה הבאה כשמקטינים את הדפדפן */
+    flex-wrap:wrap;
+    gap:2%;
+    list-style:none
+}
+.values li{
+    width:31%;
+    padding:2%;
+    text-align:center;
+    background:var(--soft);
+    border-radius:var(--radius);
+    font-weight:700
+}
+.values li:nth-child(even){
+    background:var(--pink);
+    color:#fff
+}
+.timeline{
+    counter-reset:step;
+    list-style:none
+}
+.timeline li{
+    /* ממספר לי מ1-3 */
+    counter-increment:step;
+    position:relative;
+    padding-right:3rem;
+    margin-bottom:1rem
+}
+/* מוסיף לי עיגולים */
+.timeline li::before{
+    content:counter(step);
+    position:absolute;
+    right:0;
+    top:0;
+    width:2.2rem;
+    height:2.2rem;
+    line-height:2.2rem;
+    text-align:center;
+    border-radius:50%;
+    background:var(--pink);
+    color:#fff
+}
+blockquote{
+    margin:2rem 0;
+    padding:1rem 1.5rem;
+    border-right:.4rem solid var(--pink);
+    background:var(--soft);
+    border-radius:var(--radius);
+    font-style:italic
+}
+@media(max-width:768px){
+    .story{
+        flex-direction:column
+    }
+    .story figure{
+        width:60%
+    }
+    .values li{
+        width:100%;
+         margin-bottom:.5rem
+        }
+    }
